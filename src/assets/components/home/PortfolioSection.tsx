@@ -1,27 +1,28 @@
 const PortfolioSection = () => {
   const projects = [
-    {
-      title: "Fintrack",
-      subtitle: "Finance Tracking Mobile App",
-      description:
-        "FinTrack is a smart finance tracking app designed to help you manage expenses, set savings goals, monitor subscriptions, and gain insights into your spending habits. With sleek visuals, personalized suggestions, and weekly progress tracking, FinTrack makes saving simple and efficient – all in one place. Available on iOS and Android.",
-      image: "/images/fintrack.png",
-    },
-    {
-      title: "Cyclone Manager",
-      subtitle: "Task Automation App",
-      description:
-        "Cyclone helps teams automate repetitive tasks and manage workflows with intuitive UI and real-time sync. Build custom flows, integrate APIs, and supercharge your productivity.",
-      image: "/images/cyclone.png",
-    },
-    {
-      title: "Xplore360",
-      subtitle: "Travel Discovery Platform",
-      description:
-        "Explore new destinations, connect with local guides, and plan personalized trips all in one app. Xplore360 is your AI-powered travel assistant.",
-      image: "/images/xplore360.png",
-    },
-  ];
+  {
+    title: "Fintrack",
+    subtitle: "Finance Tracking Mobile App",
+    description:
+      "FinTrack is a smart finance tracking app designed to help you manage expenses, set savings goals, monitor subscriptions, and gain insights into your spending habits. With sleek visuals, personalized suggestions, and weekly progress tracking, FinTrack makes saving simple and efficient – all in one place. Available on iOS and Android.",
+    image: `${import.meta.env.BASE_URL}images/fintrack.png`,
+  },
+  {
+    title: "Cyclone Manager",
+    subtitle: "Task Automation App",
+    description:
+      "Cyclone helps teams automate repetitive tasks and manage workflows with intuitive UI and real-time sync. Build custom flows, integrate APIs, and supercharge your productivity.",
+    image: `${import.meta.env.BASE_URL}images/cyclone.png`,
+  },
+  {
+    title: "Xplore360",
+    subtitle: "Travel Discovery Platform",
+    description:
+      "Explore new destinations, connect with local guides, and plan personalized trips all in one app. Xplore360 is your AI-powered travel assistant.",
+    image: `${import.meta.env.BASE_URL}images/xplore360.png`,
+  },
+];
+
 
   return (
     <section className="px-4 sm:px-6 py-24 bg-[#0f172a] text-white">

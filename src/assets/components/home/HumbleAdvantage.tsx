@@ -51,7 +51,7 @@ const HumbleAdvantage = () => {
   return (
     <section
       className="w-full py-20 px-6 text-white bg-cover relative z-10 bg-center"
-      style={{ backgroundImage: `url('/photos/humble-bg.png')` }}
+      style={{ backgroundImage: `url('${import.meta.env.BASE_URL}photos/humble-bg.png')` }}
     >
       <div className="max-w-7xl mx-auto text-center">
         <div ref={headingRef}>

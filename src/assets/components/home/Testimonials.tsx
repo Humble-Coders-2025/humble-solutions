@@ -15,33 +15,34 @@ const testimonials: Testimonial[] = [
     name: "Tushar Garg",
     role: "Customer",
     text: "Contrary to popular belief, Lorem ipsum dolor sit amet. Lorem quis bibendum auctor, nisi elit consequat ipsum.",
-    image: "/assets/tushar.jpg",
+    image: `${import.meta.env.BASE_URL}assets/tushar.jpg`,
   },
   {
     name: "Yash Agarwal",
     role: "Customer",
     text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    image: "/assets/yash.jpg",
+    image: `${import.meta.env.BASE_URL}assets/yash.jpg`,
   },
   {
     name: "Sanya Mehra",
     role: "Customer",
     text: "I was very impressed with the speed and professionalism. Would highly recommend!",
-    image: "/assets/sanya.jpg",
+    image: `${import.meta.env.BASE_URL}assets/sanya.jpg`,
   },
   {
     name: "Arjun Verma",
     role: "Customer",
     text: "This service really helped streamline our work. Excellent support team and great results!",
-    image: "/assets/arjun.jpg",
+    image: `${import.meta.env.BASE_URL}assets/arjun.jpg`,
   },
   {
     name: "Priya Singh",
     role: "Customer",
     text: "Effortless experience and outstanding delivery. Thank you!",
-    image: "/assets/priya.jpg",
+    image: `${import.meta.env.BASE_URL}assets/priya.jpg`,
   },
 ];
+
 
 const cardColors = [
   "bg-gray-900",
