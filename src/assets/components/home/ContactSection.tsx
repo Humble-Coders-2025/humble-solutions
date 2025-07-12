@@ -21,7 +21,6 @@ const ContactSection = () => {
             trigger: leftRef.current,
             start: "top 60%",
             toggleActions: "play reverse play reverse",
-            
           },
         }
       );
@@ -45,9 +44,12 @@ const ContactSection = () => {
     }
   }, []);
 
+  const inputClass =
+    "w-full max-w-full bg-transparent border border-white placeholder-white outline-none py-2 px-3 rounded";
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4">
-      <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
+      <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
         <div ref={leftRef}>
           <h3 className="text-xl font-medium mb-2">Got a Project in Mind?</h3>
@@ -55,7 +57,7 @@ const ContactSection = () => {
             Let’s Make It Happen Together!
           </h1>
           <img
-            src="/paper-plane-girl.png" // Replace with your actual image path
+            src="/paper-plane-girl.png"
             alt="Girl on paper plane"
             className="w-32 mt-4"
           />
@@ -67,7 +69,7 @@ const ContactSection = () => {
             <label className="block mb-1 font-medium">Full Name</label>
             <input
               type="text"
-              className="w-full bg-transparent border-b border-white placeholder-white outline-none py-2"
+              className={inputClass}
               placeholder="John Doe"
             />
           </div>
@@ -75,7 +77,7 @@ const ContactSection = () => {
             <label className="block mb-1 font-medium">Email address</label>
             <input
               type="email"
-              className="w-full bg-transparent border-b border-white placeholder-white outline-none py-2"
+              className={inputClass}
               placeholder="you@example.com"
             />
           </div>
@@ -83,14 +85,14 @@ const ContactSection = () => {
             <label className="block mb-1 font-medium">Phone Number</label>
             <input
               type="tel"
-              className="w-full bg-transparent border-b border-white placeholder-white outline-none py-2"
+              className={inputClass}
               placeholder="+123456789"
             />
           </div>
           <div>
             <label className="block mb-1 font-medium">Your Message:</label>
             <textarea
-              className="w-full bg-transparent border-b border-white placeholder-white outline-none py-2 h-24"
+              className={`${inputClass} h-24 resize-none`}
               placeholder="Tell us about your project..."
             ></textarea>
           </div>
