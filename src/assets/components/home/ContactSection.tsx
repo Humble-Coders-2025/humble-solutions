@@ -48,30 +48,26 @@ const ContactSection = () => {
     "w-full max-w-full bg-transparent border border-white placeholder-white outline-none py-2 px-3 rounded";
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
-      <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
+    <section className="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
-        <div ref={leftRef}>
+        <div ref={leftRef} className="text-center lg:text-left">
           <h3 className="text-xl font-medium mb-2">Got a Project in Mind?</h3>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Let’s Make It Happen Together!
           </h1>
           <img
-            src="/paper-plane-girl.png"
+            src={`${import.meta.env.BASE_URL}photos/paper-plane-girl.png`}
             alt="Girl on paper plane"
-            className="w-32 mt-4"
+            className="w-72 mx-auto lg:mx-0 mt-4"
           />
         </div>
 
         {/* Right Side */}
-        <form ref={rightRef} className="space-y-6">
+        <form ref={rightRef} className="space-y-6 w-full max-w-lg mx-auto">
           <div>
             <label className="block mb-1 font-medium">Full Name</label>
-            <input
-              type="text"
-              className={inputClass}
-              placeholder="John Doe"
-            />
+            <input type="text" className={inputClass} placeholder="John Doe" />
           </div>
           <div>
             <label className="block mb-1 font-medium">Email address</label>

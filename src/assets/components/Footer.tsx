@@ -68,7 +68,7 @@ const Footer = () => {
         {/* 5. Right-side Illustration */}
         <div className="flex justify-center md:justify-end items-start w-full">
           <img
-            src="/photos/footer.png"
+            src={`${import.meta.env.BASE_URL}photos/footer.png`}
             alt="Footer Illustration"
             className="max-w-full"
           />

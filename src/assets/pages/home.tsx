@@ -13,7 +13,7 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-left-top bg-no-repeat"
+      className="w-full bg-cover bg-left-top bg-no-repeat"
       style={{ backgroundImage: `url('${import.meta.env.BASE_URL}photos/bg.png')` }}
     >
       <div className="sticky top-5 left-0 right-0 z-50 shadow-md">
@@ -26,9 +26,11 @@ const Home = () => {
       <Testimonials />
       <Accordion />
       <ContactSection />
+      
       <Footer />
     </div>
   );
 };
+
 
 export default Home;
