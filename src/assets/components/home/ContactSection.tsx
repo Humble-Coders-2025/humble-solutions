@@ -49,7 +49,7 @@ const ContactSection = () => {
 
   return (
     <section className="min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
         <div ref={leftRef} className="text-center lg:text-left">
           <h3 className="text-xl font-medium mb-2">Got a Project in Mind?</h3>

@@ -71,7 +71,7 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-4 sm:px-8 lg:px-32">
+    <section className="bg-black text-white py-20 px-4 sm:px-8 md:px-32">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
           Stay Curious, <span className="text-blue-400">Questions?</span>

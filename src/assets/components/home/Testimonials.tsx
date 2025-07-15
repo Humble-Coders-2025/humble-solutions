@@ -96,7 +96,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="bg-[#0D0D0D] text-white py-16 px-6 lg:px-20">
-      <div className="flex flex-col lg:flex-row gap-12 items-start">
+      <div className="flex flex-col md:flex-row gap-12 items-start">
         {/* Left Column */}
         <div ref={leftRef} className="lg:w-1/2 space-y-6">
           <h2 className="text-3xl lg:text-4xl font-bold leading-tight">

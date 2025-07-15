@@ -21,7 +21,7 @@ const HeroSection = ({ scrollContainerRef }: HeroSectionProps) => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto px-4 py-16 min-h-screen gap-10"
+      className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-4 py-16 min-h-screen gap-10"
     >
       {/* Left: Text */}
       <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-6 lg:p-5">

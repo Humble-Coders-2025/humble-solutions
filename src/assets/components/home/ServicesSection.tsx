@@ -8,7 +8,7 @@ const ServicesSection = () => {
  
   return (
     <section
-      className="w-full min-h-[70vh] flex flex-col lg:flex-row items-center justify-center px-4 py-16 gap-10"
+      className="w-full min-h-[70vh] flex flex-col md:flex-row items-center justify-center px-4 py-16 gap-10"
     >
       {/* Left Image */}
       <div className="flex-1 flex justify-center items-center mb-10 lg:mb-0 relative">
