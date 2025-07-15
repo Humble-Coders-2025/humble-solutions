@@ -10,19 +10,27 @@ import Accordion from '../components/home/Accordion';
 import ContactSection from '../components/home/ContactSection';
 import Footer from '../components/Footer';
 
+import { useRef } from "react";
+
 const Home = () => {
+  const scrollSnapRef = useRef<HTMLDivElement>(null);
+  
+
   return (
-    <div
-      className="w-full bg-cover bg-left-top bg-no-repeat"
+    <div className="w-full bg-cover bg-left-top bg-no-repeat"
       style={{ backgroundImage: `url('${import.meta.env.BASE_URL}photos/bg.png')` }}
     >
       <div className="sticky top-5 left-0 right-0 z-50 shadow-md">
         <Navbar />
       </div>
-      {/* Scroll Snap Wrapper for first 3 sections */}
-      <div className="h-screen overflow-y-auto snap-y snap-mandatory hide-scrollbar">
+
+      {/* Scroll Snap Container */}
+      <div
+        ref={scrollSnapRef}
+        className="h-screen overflow-y-auto snap-y snap-mandatory hide-scrollbar"
+      >
         <div className="snap-start">
-          <HeroSection />
+          <HeroSection scrollContainerRef={scrollSnapRef} />
         </div>
         <div className="snap-start">
           <ServicesSection />
@@ -31,16 +39,15 @@ const Home = () => {
           <PortfolioSection />
         </div>
       </div>
+
       {/* Remaining sections */}
       <HumbleAdvantage />
       <Testimonials />
       <Accordion />
       <ContactSection />
-      
       <Footer />
     </div>
   );
 };
-
 
 export default Home;

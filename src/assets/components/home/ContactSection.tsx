@@ -48,7 +48,7 @@ const ContactSection = () => {
     "w-full max-w-full bg-transparent border border-white placeholder-white outline-none py-2 px-3 rounded";
 
   return (
-    <section className="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
+    <section className="min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
         <div ref={leftRef} className="text-center lg:text-left">
