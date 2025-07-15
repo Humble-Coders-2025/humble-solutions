@@ -19,9 +19,19 @@ const Home = () => {
       <div className="sticky top-5 left-0 right-0 z-50 shadow-md">
         <Navbar />
       </div>
-      <HeroSection />
-      <ServicesSection />
-      <PortfolioSection />
+      {/* Scroll Snap Wrapper for first 3 sections */}
+      <div className="h-screen overflow-y-auto snap-y snap-mandatory hide-scrollbar">
+        <div className="snap-start">
+          <HeroSection />
+        </div>
+        <div className="snap-start">
+          <ServicesSection />
+        </div>
+        <div className="snap-start">
+          <PortfolioSection />
+        </div>
+      </div>
+      {/* Remaining sections */}
       <HumbleAdvantage />
       <Testimonials />
       <Accordion />

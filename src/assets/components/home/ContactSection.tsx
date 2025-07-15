@@ -66,11 +66,11 @@ const ContactSection = () => {
         {/* Right Side */}
         <form ref={rightRef} className="space-y-6 w-full max-w-lg mx-auto">
           <div>
-            <label className="block mb-1 font-medium">Full Name</label>
+            <label className="block mb-1 font-lg">Full Name</label>
             <input type="text" className={inputClass} placeholder="John Doe" />
           </div>
           <div>
-            <label className="block mb-1 font-medium">Email address</label>
+            <label className="block mb-1 font-lg">Email address</label>
             <input
               type="email"
               className={inputClass}
@@ -78,7 +78,7 @@ const ContactSection = () => {
             />
           </div>
           <div>
-            <label className="block mb-1 font-medium">Phone Number</label>
+            <label className="block mb-1 font-lg">Phone Number</label>
             <input
               type="tel"
               className={inputClass}
@@ -86,7 +86,7 @@ const ContactSection = () => {
             />
           </div>
           <div>
-            <label className="block mb-1 font-medium">Your Message:</label>
+            <label className="block mb-1 font-lg">Your Message:</label>
             <textarea
               className={`${inputClass} h-24 resize-none`}
               placeholder="Tell us about your project..."
@@ -97,7 +97,7 @@ const ContactSection = () => {
             className="bg-white text-blue-600 px-6 py-2 rounded-full flex items-center gap-2 hover:bg-gray-100 transition duration-300"
           >
             Submit
-            <span className="text-lg">→</span>
+            <span className="text-lg justify-center">→</span>
           </button>
         </form>
       </div>
