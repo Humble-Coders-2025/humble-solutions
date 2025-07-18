@@ -28,10 +28,10 @@ const PortfolioSection = () => {
     <section className="px-4 sm:px-6 py-24 bg-[#0f172a] text-white">
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-16 max-w-7xl mx-auto gap-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-          Here Is A Glimpse Of <span className="text-blue-400">Our Work....</span>
+        <h2 className="font-avenir-demibold text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+          Here Is A Glimpse Of <span className="font-avenir-demibold text-blue-400">Our Work....</span>
         </h2>
-        <button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full text-base md:text-lg shadow flex items-center gap-2">
+        <button className="font-avenir-demibold bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full text-base md:text-lg shadow flex items-center gap-2">
           View Our Portfolio →
         </button>
       </div>
@@ -46,9 +46,9 @@ const PortfolioSection = () => {
             >
               {/* Text Section */}
               <div className="md:w-2/3 w-full">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">{project.title}</h3>
-                <h4 className="text-gray-400 text-lg sm:text-xl mb-4">{project.subtitle}</h4>
-                <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3" style={{ fontFamily: 'IBM Plex Mono, monospace', fontWeight: 600 }}>{project.title}</h3>
+                <h4 className="font-avenir-regular text-gray-400 text-lg sm:text-xl mb-4">{project.subtitle}</h4>
+                <p className="font-avenir-regular text-gray-300 text-base sm:text-lg leading-relaxed">
                   {project.description}
                 </p>
               </div>

@@ -36,8 +36,8 @@ const HoverCard: React.FC<HoverCardProps> = ({
         peer-hover:right-0 peer-hover:bottom-0 peer-hover:rounded-b-none
         peer-hover:items-center peer-hover:justify-center peer-hover:w-full peer-hover:h-full peer-hover:p-6`}
       >
-        <div className="font-bold text-xl break-words mb-3">{title}</div>
-        <div className="text-xs font-medium mt-2 break-words">{description}</div>
+        <div className="font-avenir-regular font-bold text-xl break-words mb-3">{title}</div>
+        <div className="font-avenir-regular text-xs font-medium mt-2 break-words">{description}</div>
       </div>
 
       {/* Visible title */}

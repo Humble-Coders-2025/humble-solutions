@@ -100,10 +100,10 @@ const Testimonials: React.FC = () => {
         {/* Left Column */}
         <div ref={leftRef} className="lg:w-1/2 space-y-6">
           <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
-            What <span className="text-blue-400">Our Clients</span> Say About <br />
-            <span className="text-white">Services</span>
+            What <span className="font-avenir-demibold text-blue-400">Our Clients</span> Say About <br />
+            <span className="font-avenir-demibold text-white">Services</span>
           </h2>
-          <p className="text-gray-400">
+          <p className="font-avenir-regular text-gray-400">
             Lorem ipsum dolor sit amet. Lorem quis bibendum auctor, nisi elit consequat ipsum,
             nec sagittis sem nibh id euis sed odio sit amet nibh vulputate cursus.
           </p>
@@ -123,7 +123,7 @@ const Testimonials: React.FC = () => {
                 key={index}
                 className={`snap-center shrink-0 w-[280px] md:w-[300px] flex flex-col justify-between p-6 rounded-xl min-h-[250px] outline-1 outline-blue-400 outline-offset-2 transition-all duration-300 ease-in-out relative ${cardColors[index % cardColors.length]}`}
               >
-                <p className="text-base text-gray-300 mt-4">{t.text}</p>
+                <p className="font-avenir-regular text-base text-gray-300 mt-4">{t.text}</p>
                 <div className="flex items-center gap-3 mt-auto">
                   <img
                     src={t.image}

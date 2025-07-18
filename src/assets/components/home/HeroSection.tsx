@@ -25,18 +25,18 @@ const HeroSection = ({ scrollContainerRef }: HeroSectionProps) => {
     >
       {/* Left: Text */}
       <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-6 lg:p-5">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
+        <h1 className=" font-avenir-demibold text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
           Transform Ideas into Intuitive <br />
           <span className="text-blue-400">Digital Experiences.</span>
         </h1>
-        <p className="text-gray-400 text-base sm:text-lg max-w-xl">
+        <p className=" font-avenir-regular text-gray-400 text-base sm:text-lg max-w-xl">
           We craft sleek mobile apps, responsive websites, and user-centered UI/UX designs...
         </p>
         <div className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow transition text-base">
+          <button className="font-avenir-regular bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow transition text-base">
             Get In Touch
           </button>
-          <button className="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-full shadow transition text-base flex items-center gap-2 justify-center">
+          <button className="font-avenir-regular bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-full shadow transition text-base flex items-center gap-2 justify-center">
             Explore Our Portfolio <span>→</span>
           </button>
         </div>

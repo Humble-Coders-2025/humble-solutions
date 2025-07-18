@@ -74,9 +74,9 @@ const Accordion: React.FC = () => {
     <section className="bg-black text-white py-20 px-4 sm:px-8 md:px-32">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-          Stay Curious, <span className="text-blue-400">Questions?</span>
+          Stay Curious, <span className="font-avenir-demibold text-blue-400">Questions?</span>
         </h2>
-        <p className="text-gray-400 mb-12">
+        <p className="font-avenir-demibold text-gray-400 mb-12">
           Everything you need to know about Humble Solutions
         </p>
 
@@ -115,7 +115,7 @@ const Accordion: React.FC = () => {
                     overflow: "hidden",
                   }}
                 >
-                  <div className="text-sm text-gray-400 px-1 pt-2 pb-2 mt-1">
+                  <div className="font-avenir-regular text-sm text-gray-400 px-1 pt-2 pb-2 mt-1">
                     {item.answer}
                   </div>
                 </div>

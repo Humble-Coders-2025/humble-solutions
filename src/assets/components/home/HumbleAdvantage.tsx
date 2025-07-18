@@ -55,11 +55,11 @@ const HumbleAdvantage = () => {
     >
       <div className="max-w-7xl mx-auto text-center">
         <div ref={headingRef}>
-          <h3 className="text-lg font-medium mb-5">
+          <h3 className="font-avenir-regular text-lg font-medium mb-5">
             Three Pillars That Propel Your Project From Vision To Victory.
           </h3>
           <h2 className="text-4xl md:text-5xl font-semibold">
-            The <span className="text-blue-400">Humble</span> Advantage
+            The <span className="font-avenir-regular text-blue-400">Humble</span> Advantage
           </h2>
         </div>
         <div
