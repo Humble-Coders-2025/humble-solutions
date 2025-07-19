@@ -187,20 +187,23 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
   const containerRef = scrollContainerRef;
   const { scrollYProgress } = useScroll({ container: containerRef });
   // Convert pixel positions to percentage based on window size
-  const startXPercent = (950 / window.innerWidth) * 100;
+  const startXPercent = (950 / window.innerWidth) * 100; // Hero
   const startYPercent = (90 / window.innerHeight) * 100;
-  const endXPercent = (260 / window.innerWidth) * 100;
-  const endYPercent = (850 / window.innerHeight) * 100;
+  const midXPercent = (260 / window.innerWidth) * 100; // Services
+  const midYPercent = (850 / window.innerHeight) * 100;
+  // User can set these for Portfolio section
+  const endXPercent = 40; // percent from left (set your value)
+  const endYPercent = 230; // percent from top (set your value)
   // Animate position and scale
   const xRaw = useTransform(
     scrollYProgress,
-    [0, 0.5],
-    [startXPercent, endXPercent]
+    [0, 0.5, 1],
+    [startXPercent, midXPercent, endXPercent]
   );
   const yRaw = useTransform(
     scrollYProgress,
-    [0, 0.5],
-    [startYPercent, endYPercent]
+    [0, 0.5, 1],
+    [startYPercent, midYPercent, endYPercent]
   );
   // Convert to percent string for CSS
   const x = useTransform(xRaw, (v) => `${v}%`);
