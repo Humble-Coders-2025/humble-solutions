@@ -1,44 +1,32 @@
 // src/pages/Home.tsx
 
-import Navbar from '../components/navbar';
-import HeroSection from '../components/home/HeroSection';
-import ServicesSection from '../components/home/ServicesSection';
-import PortfolioSection from '../components/home/PortfolioSection';
-import HumbleAdvantage from '../components/home/HumbleAdvantage';
-import Testimonials from '../components/home/Testimonials';
-import Accordion from '../components/home/Accordion';
-import ContactSection from '../components/home/ContactSection';
-import Footer from '../components/Footer';
+import Navbar from "../components/navbar";
+// ...existing code...
+import HumbleAdvantage from "../components/home/HumbleAdvantage";
+import Testimonials from "../components/home/Testimonials";
+import Accordion from "../components/home/Accordion";
+import ContactSection from "../components/home/ContactSection";
+import Footer from "../components/Footer";
+import HomeSections from "../components/home/HomeSections";
 
 import { useRef } from "react";
 
 const Home = () => {
   const scrollSnapRef = useRef<HTMLDivElement>(null);
-  
 
   return (
-    <div className="w-full bg-cover bg-left-top bg-no-repeat"
-      style={{ backgroundImage: `url('${import.meta.env.BASE_URL}photos/bg.png')` }}
+    <div
+      className="w-full bg-cover bg-left-top bg-no-repeat"
+      style={{
+        backgroundImage: `url('${import.meta.env.BASE_URL}photos/bg.png')`,
+      }}
     >
       <div className="sticky top-5 left-0 right-0 z-50 shadow-md">
         <Navbar />
       </div>
 
       {/* Scroll Snap Container */}
-      <div
-        ref={scrollSnapRef}
-        className="h-screen overflow-y-auto snap-y snap-mandatory hide-scrollbar"
-      >
-        <div className="snap-start">
-          <HeroSection scrollContainerRef={scrollSnapRef} />
-        </div>
-        <div className="snap-start">
-          <ServicesSection />
-        </div>
-        <div className="snap-start">
-          <PortfolioSection />
-        </div>
-      </div>
+      <HomeSections scrollContainerRef={scrollSnapRef} />
 
       {/* Remaining sections */}
       <HumbleAdvantage />
