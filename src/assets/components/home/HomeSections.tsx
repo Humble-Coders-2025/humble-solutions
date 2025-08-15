@@ -1,7 +1,9 @@
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import ServiceCard from "./ServiceCard";
 import { services } from "./data/services";
+
 // HERO SECTION
 export const HeroSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -60,7 +62,7 @@ export const ServicesSection = () => {
         <img
           src={`${import.meta.env.BASE_URL}photos/hand.png`}
           alt="Hand"
-          className="max-w-[250px] sm:max-w-[300px] md:max-w-md lg:max-w-md w-full h-auto z-9"
+          className="max-w-[350px] sm:max-w-[350px] md:max-w-md lg:max-w-md w-full h-auto z-9"
         />
         {/* Foreground Phone Image (hidden on md+) */}
         <img
@@ -93,8 +95,11 @@ export const ServicesSection = () => {
   );
 };
 
-// PORTFOLIO SECTION
-const PortfolioSection = () => {
+type PortfolioSectionProps = {
+  portfolioScrollRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
   const projects = [
     {
       title: "Fintrack",
@@ -120,7 +125,7 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section className="px-0 py-20 bg-[#0f172a] text-white w-full min-h-screen flex flex-col">
+    <section className="px-0 py-10 bg-[#0f172a] text-white w-full min-h-screen flex flex-col">
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 px-6 gap-6 w-full">
         <h2 className="font-avenir-demibold text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
@@ -135,8 +140,11 @@ const PortfolioSection = () => {
       </div>
 
       {/* Scrollable Cards */}
-      <div className="flex-1 w-full overflow-x-auto custom-scrollbar">
-        <div className="flex gap-6 sm:gap-8 px-6 py-6 min-w-max h-full items-center">
+      <div
+        className="flex-1 w-full overflow-x-auto overflow-y-hidden custom-scrollbar"
+        ref={portfolioScrollRef}
+      >
+        <div className="flex gap-6 sm:gap-8 px-6 py-6 min-w-max items-center">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -186,6 +194,7 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
   // Framer Motion scroll animation for phone-2 (md+ screens)
   const containerRef = scrollContainerRef;
   const { scrollYProgress } = useScroll({ container: containerRef });
+
   // Convert pixel positions to percentage based on window size
   const startXPercent = (950 / window.innerWidth) * 100; // Hero
   const startYPercent = (90 / window.innerHeight) * 100;
@@ -194,54 +203,103 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
   // User can set these for Portfolio section
   const endXPercent = 40; // percent from left (set your value)
   const endYPercent = 230; // percent from top (set your value)
+
   // Animate position and scale
   const xRaw = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    [startXPercent, midXPercent, endXPercent]
+    [0, 0.5, 0.95, 1],
+    [startXPercent, midXPercent, endXPercent, endXPercent]
   );
   const yRaw = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    [startYPercent, midYPercent, endYPercent]
+    [0, 0.5, 0.95, 1],
+    [startYPercent, midYPercent, endYPercent, endYPercent]
   );
-  // Convert to percent string for CSS
+
+  // Portfolio horizontal scroll logic
+  const portfolioScrollRef = useRef<HTMLDivElement>(null);
+  const [portfolioScroll, setPortfolioScroll] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (portfolioScrollRef.current) {
+        setPortfolioScroll(portfolioScrollRef.current.scrollLeft);
+      }
+    };
+    const el = portfolioScrollRef.current;
+    if (el) {
+      el.addEventListener("scroll", handleScroll);
+      return () => el.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  // Final left position: animate with horizontal scroll in Portfolio section
   const x = useTransform(xRaw, (v) => `${v}%`);
   const y = useTransform(yRaw, (v) => `${v}%`);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1]);
   const rotate = useTransform(scrollYProgress, [0, 0.5], [-8, 0]);
 
+  // Responsive: Only enable scroll snap and animation on md+ screens
+  const isLargeScreen =
+    typeof window !== "undefined" && window.innerWidth >= 768;
+
   return (
     <div
       ref={containerRef}
-      className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth relative hide-scrollbar"
+      className={
+        isLargeScreen
+          ? "h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth relative hide-scrollbar"
+          : "min-h-screen w-full overflow-y-auto relative hide-scrollbar"
+      }
       style={{ WebkitOverflowScrolling: "touch" }}
     >
       {/* Animated phone-2 image for md+ screens */}
-      <motion.img
-        src={`${import.meta.env.BASE_URL}photos/phone-2.png`}
-        alt="Phone 2"
-        className="hidden md:block absolute z-30 rounded-3xl shadow-2xl"
-        style={{
-          left: x,
-          top: y,
-          width: "200px",
-          borderRadius: "1.5rem",
-          boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
-          scale,
-          rotate,
-          zIndex: 10,
-        }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
-      />
-      <div className="snap-start min-h-screen flex items-stretch">
+      {isLargeScreen && (
+        <motion.img
+          src={`${import.meta.env.BASE_URL}photos/phone-2.png`}
+          alt="Phone 2"
+          className="hidden md:block absolute z-30 rounded-3xl shadow-2xl"
+          style={{
+            left: x,
+            top: y,
+            width: "200px",
+            borderRadius: "1.5rem",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+            scale,
+            rotate,
+            zIndex: 10,
+            opacity: 1,
+          }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+        />
+      )}
+      <div
+        className={
+          isLargeScreen
+            ? "snap-start min-h-screen flex items-stretch"
+            : "min-h-screen flex items-stretch"
+        }
+      >
         <HeroSection />
       </div>
-      <div className="snap-start min-h-screen flex items-stretch">
+      <div
+        className={
+          isLargeScreen
+            ? "snap-start min-h-screen flex items-stretch"
+            : "min-h-screen flex items-stretch"
+        }
+      >
         <ServicesSection />
       </div>
-      <div className="snap-start min-h-screen flex items-stretch">
-        <PortfolioSection />
+      <div
+        className={
+          isLargeScreen
+            ? "snap-start min-h-screen flex items-stretch"
+            : "min-h-screen flex items-stretch"
+        }
+      >
+        {/* Pass the ref to the Portfolio section's scrollable container */}
+        <PortfolioSection portfolioScrollRef={portfolioScrollRef} />
       </div>
     </div>
   );

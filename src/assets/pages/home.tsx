@@ -1,7 +1,6 @@
 // src/pages/Home.tsx
 
 import Navbar from "../components/navbar";
-// ...existing code...
 import HumbleAdvantage from "../components/home/HumbleAdvantage";
 import Testimonials from "../components/home/Testimonials";
 import Accordion from "../components/home/Accordion";
