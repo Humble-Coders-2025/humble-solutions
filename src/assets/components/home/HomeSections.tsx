@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ServiceCard from "./ServiceCard";
 import { services } from "./data/services";
 
@@ -106,7 +106,7 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
       subtitle: "Finance Tracking Mobile App",
       description:
         "FinTrack is a smart finance tracking app designed to help you manage expenses, set savings goals, monitor subscriptions, and gain insights into your spending habits. With sleek visuals, personalized suggestions, and weekly progress tracking, FinTrack makes saving simple and efficient – all in one place. Available on iOS and Android.",
-      image: `${import.meta.env.BASE_URL}images/fintrack.png`,
+      image: `${import.meta.env.BASE_URL}photos/phone.png`,
     },
     {
       title: "Cyclone Manager",
@@ -191,7 +191,6 @@ type HomeSectionsProps = {
 };
 
 const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
-  // Framer Motion scroll animation for phone-2 (md+ screens)
   const containerRef = scrollContainerRef;
   const { scrollYProgress } = useScroll({ container: containerRef });
 
@@ -200,46 +199,26 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
   const startYPercent = (90 / window.innerHeight) * 100;
   const midXPercent = (260 / window.innerWidth) * 100; // Services
   const midYPercent = (850 / window.innerHeight) * 100;
-  // User can set these for Portfolio section
-  const endXPercent = 40; // percent from left (set your value)
-  const endYPercent = 230; // percent from top (set your value)
 
-  // Animate position and scale
+  // ✅ Freeze position at Services (0.5)
   const xRaw = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.95, 1],
-    [startXPercent, midXPercent, endXPercent, endXPercent]
+    [0, 0.5, 1],
+    [startXPercent, midXPercent, midXPercent]
   );
   const yRaw = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.95, 1],
-    [startYPercent, midYPercent, endYPercent, endYPercent]
+    [0, 0.5, 1],
+    [startYPercent, midYPercent, midYPercent]
   );
 
-  // Portfolio horizontal scroll logic
-  const portfolioScrollRef = useRef<HTMLDivElement>(null);
-  const [portfolioScroll, setPortfolioScroll] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (portfolioScrollRef.current) {
-        setPortfolioScroll(portfolioScrollRef.current.scrollLeft);
-      }
-    };
-    const el = portfolioScrollRef.current;
-    if (el) {
-      el.addEventListener("scroll", handleScroll);
-      return () => el.removeEventListener("scroll", handleScroll);
-    }
-  }, []);
-
-  // Final left position: animate with horizontal scroll in Portfolio section
   const x = useTransform(xRaw, (v) => `${v}%`);
   const y = useTransform(yRaw, (v) => `${v}%`);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1]);
   const rotate = useTransform(scrollYProgress, [0, 0.5], [-8, 0]);
 
-  // Responsive: Only enable scroll snap and animation on md+ screens
+  const portfolioScrollRef = useRef<HTMLDivElement>(null);
+
   const isLargeScreen =
     typeof window !== "undefined" && window.innerWidth >= 768;
 
@@ -253,7 +232,7 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
       }
       style={{ WebkitOverflowScrolling: "touch" }}
     >
-      {/* Animated phone-2 image for md+ screens */}
+      {/* Floating phone stops at Services */}
       {isLargeScreen && (
         <motion.img
           src={`${import.meta.env.BASE_URL}photos/phone-2.png`}
@@ -268,7 +247,7 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
             scale,
             rotate,
             zIndex: 10,
-            opacity: 1,
+            opacity: 1, // always visible
           }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         />
@@ -298,7 +277,6 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
             : "min-h-screen flex items-stretch"
         }
       >
-        {/* Pass the ref to the Portfolio section's scrollable container */}
         <PortfolioSection portfolioScrollRef={portfolioScrollRef} />
       </div>
     </div>
