@@ -1,8 +1,8 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import ServiceCard from "./ServiceCard";
-import { services } from "./data/services";
+import ServiceCard from "./ServiceCard"; // Assuming these are in separate files
+import { services } from "./data/services"; // Assuming these are in separate files
 
 // HERO SECTION
 export const HeroSection = () => {
@@ -40,11 +40,11 @@ export const HeroSection = () => {
             alt="Phone 1"
             className="absolute z-20 rounded-3xl shadow-2xl rotate-[-8deg] w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] xl:w-[220px] left-[100px] top-[20px]"
           />
-          {/* Second Phone (hidden on md+) */}
+          {/* Second Phone (now hidden on lg+) */}
           <img
             src={`${import.meta.env.BASE_URL}photos/phone-2.png`}
             alt="Phone 2"
-            className="absolute z-10 rounded-3xl shadow-2xl rotate-[-8deg] w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] left-0 top-0 md:hidden"
+            className="absolute z-10 rounded-3xl shadow-2xl rotate-[-8deg] w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] left-0 top-0 lg:hidden"
           />
         </div>
       </div>
@@ -64,11 +64,11 @@ export const ServicesSection = () => {
           alt="Hand"
           className="max-w-[350px] sm:max-w-[350px] md:max-w-md lg:max-w-md w-full h-auto z-9"
         />
-        {/* Foreground Phone Image (hidden on md+) */}
+        {/* Foreground Phone Image (now hidden on lg+) */}
         <img
           src={`${import.meta.env.BASE_URL}photos/phone-2.png`}
           alt="Phone"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[150px] sm:max-w-[180px] md:max-w-[px] lg:max-w-[240px] w-full h-auto z-[30] md:hidden"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[150px] sm:max-w-[180px] md:max-w-[220px] lg:max-w-[240px] w-full h-auto z-[30] lg:hidden"
         />
       </div>
       {/* Right Accordion */}
@@ -95,6 +95,7 @@ export const ServicesSection = () => {
   );
 };
 
+// PORTFOLIO SECTION
 type PortfolioSectionProps = {
   portfolioScrollRef: React.RefObject<HTMLDivElement | null>;
 };
@@ -185,7 +186,7 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
   );
 };
 
-// COMBINED EXPORT
+// MAIN COMPONENT
 type HomeSectionsProps = {
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
 };
@@ -200,7 +201,6 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
   const midXPercent = (260 / window.innerWidth) * 100; // Services
   const midYPercent = (850 / window.innerHeight) * 100;
 
-  // ✅ Freeze position at Services (0.5)
   const xRaw = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -219,25 +219,30 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
 
   const portfolioScrollRef = useRef<HTMLDivElement>(null);
 
-  const isLargeScreen =
+  // For scroll-snap behavior starting at md (768px)
+  const isMediumScreen =
     typeof window !== "undefined" && window.innerWidth >= 768;
+
+  // For the animation, starting at lg (1024px)
+  const isLargeScreen =
+    typeof window !== "undefined" && window.innerWidth >= 1024;
 
   return (
     <div
       ref={containerRef}
       className={
-        isLargeScreen
+        isMediumScreen // Use md breakpoint for snap-scroll
           ? "h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth relative hide-scrollbar"
           : "min-h-screen w-full overflow-y-auto relative hide-scrollbar"
       }
       style={{ WebkitOverflowScrolling: "touch" }}
     >
-      {/* Floating phone stops at Services */}
+      {/* Floating phone now only renders on large screens (lg+) */}
       {isLargeScreen && (
         <motion.img
           src={`${import.meta.env.BASE_URL}photos/phone-2.png`}
           alt="Phone 2"
-          className="hidden md:block absolute z-30 rounded-3xl shadow-2xl"
+          className="hidden lg:block absolute z-30 rounded-3xl shadow-2xl"
           style={{
             left: x,
             top: y,
@@ -247,32 +252,38 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
             scale,
             rotate,
             zIndex: 10,
-            opacity: 1, // always visible
+            opacity: 1,
           }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         />
       )}
+
+      {/* Hero Section Wrapper */}
       <div
         className={
-          isLargeScreen
+          isMediumScreen
             ? "snap-start min-h-screen flex items-stretch"
             : "min-h-screen flex items-stretch"
         }
       >
         <HeroSection />
       </div>
+
+      {/* Services Section Wrapper */}
       <div
         className={
-          isLargeScreen
+          isMediumScreen
             ? "snap-start min-h-screen flex items-stretch"
             : "min-h-screen flex items-stretch"
         }
       >
         <ServicesSection />
       </div>
+
+      {/* Portfolio Section Wrapper */}
       <div
         className={
-          isLargeScreen
+          isMediumScreen
             ? "snap-start min-h-screen flex items-stretch"
             : "min-h-screen flex items-stretch"
         }
