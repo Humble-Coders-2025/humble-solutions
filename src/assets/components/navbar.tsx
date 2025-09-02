@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -17,34 +18,34 @@ const Navbar = () => {
       {/* Desktop Navigation Links */}
       <ul className="hidden md:flex space-x-8 text-white font-medium">
         <li className="relative group">
-          <a href="#" className="hover:text-blue-400 transition">
+          <Link to="/" className="hover:text-blue-400 transition">
             Home
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
-          </a>
+          </Link>
         </li>
         <li className="relative group">
-          <a href="#" className="hover:text-blue-400 transition">
+          <Link to="/services" className="hover:text-blue-400 transition">
             Services
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
-          </a>
+          </Link>
         </li>
         <li className="relative group">
-          <a href="#" className="hover:text-blue-400 transition">
+          <Link to="/portfolio" className="hover:text-blue-400 transition">
             Portfolio
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
-          </a>
+          </Link>
         </li>
         <li className="relative group">
-          <a href="#" className="hover:text-blue-400 transition">
+          <Link to="/blogs" className="hover:text-blue-400 transition">
             Blogs
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
-          </a>
+          </Link>
         </li>
         <li className="relative group">
-          <a href="#" className="hover:text-blue-400 transition">
+          <Link to="/about" className="hover:text-blue-400 transition">
             About Us
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -68,11 +69,11 @@ const Navbar = () => {
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-gray-700 rounded-b-2xl shadow-lg flex flex-col items-center z-50 md:hidden animate-fade-in">
           <ul className="flex flex-col space-y-4 py-4 text-white font-medium w-full items-center">
-            <li><a href="#" className="hover:text-blue-400 transition">Home</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition">Services</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition">Portfolio</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition">Blogs</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition">About Us</a></li>
+            <li><Link to="/" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/services" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Services</Link></li>
+            <li><Link to="/portfolio" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Portfolio</Link></li>
+            <li><Link to="/blogs" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
+            <li><Link to="/about" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>About Us</Link></li>
           </ul>
           <button className="mb-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-full shadow transition">
             Get A Quote
