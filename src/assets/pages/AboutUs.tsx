@@ -59,7 +59,7 @@ const stats = [
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="pt-5">
+      <div className="pt-5 relative z-50 ">
         <Navbar />
       </div>
       

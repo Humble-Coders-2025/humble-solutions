@@ -219,11 +219,7 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
 
   const portfolioScrollRef = useRef<HTMLDivElement>(null);
 
-  // For scroll-snap behavior starting at md (768px)
-  const isMediumScreen =
-    typeof window !== "undefined" && window.innerWidth >= 768;
-
-  // For the animation, starting at lg (1024px)
+  // For scroll-snap behavior starting at lg (1024px)
   const isLargeScreen =
     typeof window !== "undefined" && window.innerWidth >= 1024;
 
@@ -231,7 +227,7 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
     <div
       ref={containerRef}
       className={
-        isMediumScreen // Use md breakpoint for snap-scroll
+        isLargeScreen // Use lg breakpoint for snap-scroll
           ? "h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth relative hide-scrollbar"
           : "min-h-screen w-full overflow-y-auto relative hide-scrollbar"
       }
@@ -261,9 +257,9 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
       {/* Hero Section Wrapper */}
       <div
         className={
-          isMediumScreen
+          isLargeScreen
             ? "snap-start min-h-screen flex items-stretch"
-            : "min-h-screen flex items-stretch"
+            : "min-h-[90vh] flex items-stretch py-8"
         }
       >
         <HeroSection />
@@ -272,9 +268,9 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
       {/* Services Section Wrapper */}
       <div
         className={
-          isMediumScreen
+          isLargeScreen
             ? "snap-start min-h-screen flex items-stretch"
-            : "min-h-screen flex items-stretch"
+            : "min-h-[90vh] flex items-stretch py-8"
         }
       >
         <ServicesSection />
@@ -283,9 +279,9 @@ const HomeSections = ({ scrollContainerRef }: HomeSectionsProps) => {
       {/* Portfolio Section Wrapper */}
       <div
         className={
-          isMediumScreen
+          isLargeScreen
             ? "snap-start min-h-screen flex items-stretch"
-            : "min-h-screen flex items-stretch"
+            : "min-h-[90vh] flex items-stretch py-8"
         }
       >
         <PortfolioSection portfolioScrollRef={portfolioScrollRef} />

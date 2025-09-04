@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -6,6 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 const ContactSection = () => {
   const leftRef = useRef<HTMLDivElement | null>(null);
   const rightRef = useRef<HTMLFormElement | null>(null);
+
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   useEffect(() => {
     if (leftRef.current) {
@@ -63,24 +65,39 @@ const ContactSection = () => {
           />
         </div>
 
-        {/* Right Side */}
-        <form ref={rightRef} className="space-y-6 w-full max-w-lg mx-auto">
+        {/* Right Side (Formspree) */}
+        <form
+          ref={rightRef}
+          action="https://formspree.io/f/mnqkgeav" // 🔹 Replace with your Formspree endpoint
+          method="POST"
+          onSubmit={() => setStatus("success")}
+          className="space-y-6 w-full max-w-lg mx-auto"
+        >
           <div>
             <label className="block mb-1 font-lg">Full Name</label>
-            <input type="text" className={inputClass} placeholder="John Doe" />
+            <input
+              type="text"
+              name="name"
+              className={inputClass}
+              placeholder="John Doe"
+              required
+            />
           </div>
           <div>
             <label className="block mb-1 font-lg">Email address</label>
             <input
               type="email"
+              name="email"
               className={inputClass}
               placeholder="you@example.com"
+              required
             />
           </div>
           <div>
             <label className="block mb-1 font-lg">Phone Number</label>
             <input
               type="tel"
+              name="phone"
               className={inputClass}
               placeholder="+123456789"
             />
@@ -88,8 +105,10 @@ const ContactSection = () => {
           <div>
             <label className="block mb-1 font-lg">Your Message:</label>
             <textarea
+              name="message"
               className={`${inputClass} h-24 resize-none`}
               placeholder="Tell us about your project..."
+              required
             ></textarea>
           </div>
           <button
@@ -99,6 +118,18 @@ const ContactSection = () => {
             Submit
             <span className="text-lg justify-center">→</span>
           </button>
+
+          {/* Success/Error Messages */}
+          {status === "success" && (
+            <p className="text-green-200 text-sm mt-2">
+               Thank you! Your message has been sent.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-red-200 text-sm mt-2">
+              ❌ Oops! Something went wrong. Try again.
+            </p>
+          )}
         </form>
       </div>
     </section>
