@@ -102,28 +102,36 @@ type PortfolioSectionProps = {
 
 const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
   const projects = [
-    {
-      title: "Fintrack",
-      subtitle: "Finance Tracking Mobile App",
-      description:
-        "FinTrack is a smart finance tracking app designed to help you manage expenses, set savings goals, monitor subscriptions, and gain insights into your spending habits. With sleek visuals, personalized suggestions, and weekly progress tracking, FinTrack makes saving simple and efficient – all in one place. Available on iOS and Android.",
-      image: `${import.meta.env.BASE_URL}photos/phone.png`,
-    },
-    {
-      title: "Cyclone Manager",
-      subtitle: "Task Automation App",
-      description:
-        "Cyclone helps teams automate repetitive tasks and manage workflows with intuitive UI and real-time sync. Build custom flows, integrate APIs, and supercharge your productivity.",
-      image: `${import.meta.env.BASE_URL}images/cyclone.png`,
-    },
-    {
-      title: "Xplore360",
-      subtitle: "Travel Discovery Platform",
-      description:
-        "Explore new destinations, connect with local guides, and plan personalized trips all in one app. Xplore360 is your AI-powered travel assistant.",
-      image: `${import.meta.env.BASE_URL}images/xplore360.png`,
-    },
-  ];
+  {
+    title: "AttendX",
+    subtitle: "Smart Attendance Solution",
+    description:
+      "AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators. Custom solution for institutions.",
+    image: `${import.meta.env.BASE_URL}images/attendx.png`,
+  },
+  {
+    title: "MatriCare",
+    subtitle: "Pregnancy Healthcare App",
+    description:
+      "MatriCare is a custom pregnancy healthcare app designed to guide expecting mothers through every stage. It provides personalized health monitoring, medical report analysis, diet planning, and a supportive community. With reminders and 24/7 expert support, it ensures safe and stress-free maternity care. Available on iOS & Android.",
+    image: `${import.meta.env.BASE_URL}images/matricare.png`,
+  },
+  {
+    title: "Shape",
+    subtitle: "Cylinder Management App",
+    description:
+      "This custom solution helps gas distributors manage cylinders efficiently. It enables real-time tracking, inventory updates, and customer record management, along with automated notifications for due dates. Designed for ease of use, it streamlines workflows and enhances safety in cylinder distribution operations. Available on Android.",
+    image: `${import.meta.env.BASE_URL}images/shape.png`,
+  },
+  {
+    title: "Aromex",
+    subtitle: "Mobile Shop Management App",
+    description:
+      "Tailored for a mobile retail business, Aromex enables efficient product management, supplier tracking, sales analysis, and inventory control. With detailed statistics and streamlined workflows, it helps the client manage operations more effectively. Custom solution available on Windows, iOS, and Android.",
+    image: `${import.meta.env.BASE_URL}images/aromex.png`,
+  },
+];
+
 
   return (
     <section className="px-0 py-10 bg-[#0f172a] text-white w-full min-h-screen flex flex-col">

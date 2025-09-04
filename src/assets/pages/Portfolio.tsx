@@ -9,65 +9,77 @@ const projects = [
     title: "AttendX",
     category: "web",
     description:
-      "AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators.",
+      "Smart Attendance Solution — AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators. Custom solution for institutions.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: 2,
-    title: "Mobile Banking App",
+    title: "MatriCare",
     category: "mobile",
     description:
-      "Secure mobile banking application with biometric authentication and transaction tracking.",
+      "Pregnancy Healthcare App — MatriCare is a custom pregnancy healthcare app designed to guide expecting mothers through every stage. It provides personalized health monitoring, medical report analysis, diet planning, and a supportive community. With reminders and 24/7 expert support, it ensures safe and stress-free maternity care. Available on iOS & Android.",
     image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1588776814546-ec9c0d292fc1?auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: 3,
-    title: "Corporate Website",
-    category: "web",
+    title: "Shape – Cylinder Management App",
+    category: "mobile",
     description:
-      "Modern and responsive corporate website with CMS integration.",
+      "Industrial Utility App — This custom solution helps gas distributors manage cylinders efficiently. It enables real-time tracking, inventory updates, and customer record management, along with automated notifications for due dates. Designed for ease of use, it streamlines workflows and enhances safety in cylinder distribution operations. Available on Android.",
     image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1469&q=80",
+      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: 4,
-    title: "Fitness Tracker",
+    title: "Aromex",
     category: "mobile",
     description:
-      "Mobile app for tracking workouts, nutrition, and fitness goals.",
+      "Mobile Shop Management App — Tailored for a mobile retail business, Aromex enables efficient product management, supplier tracking, sales analysis, and inventory control. With detailed statistics and streamlined workflows, it helps the client manage operations more effectively. Custom solution available on Windows, iOS, and Android.",
     image:
-      "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1374&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: 5,
-    title: "Restaurant Booking System",
-    category: "web",
+    title: "Jewellery Shop App",
+    category: "mobile",
     description:
-      "Online reservation system for restaurants with table management.",
+      "Retail Management App — A tailored application for jewellery retailers to handle inventory, billing, customer orders, and sales tracking. With a sleek interface and integrated analytics, it optimizes operations while offering customers a smooth and professional shopping experience, helping businesses improve efficiency and customer satisfaction. Available on Android.",
     image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1611224923853-80b6e6ff46d2?auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: 6,
-    title: "Task Management App",
+    title: "Harish Karyana Merchants App",
     category: "mobile",
     description:
-      "Productivity app for managing tasks and team collaboration.",
+      "A custom-built grocery shopping solution enabling users to browse categories, access discounts, and order essentials seamlessly. Integrated with delivery tracking, active order management, and smooth navigation, it ensures convenient shopping and efficient delivery for both customers and store managers.",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1607082349566-187342dfd0ff?auto=format&fit=crop&w=1470&q=80",
+  },
+  {
+    id: 7,
+    title: "PrintShop – Smart Printing App",
+    category: "mobile",
+    description:
+      "PrintEase makes document printing simple and convenient. Upload your files, customize print settings, preview with transparent pricing, and track your orders in real-time—all from your phone. Perfect for students, professionals, and businesses.",
+    image:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1470&q=80",
+  },
+  {
+    id: 8,
+    title: "Health Camp Management System",
+    category: "web",
+    description:
+      "A role-based platform for community health camps. From participant registration and vitals recording to doctor consultations and pharmacy dispensing, each desk has its own portal. Admins manage sponsors, camps, and reports, ensuring transparency, efficiency, and accurate digital health records.",
+    image:
+      "https://images.unsplash.com/photo-1581091012184-5c1b4b9b2e3c?auto=format&fit=crop&w=1470&q=80",
   },
 ];
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white relative overflow-x-hidden">
@@ -75,7 +87,6 @@ const Portfolio = () => {
         <Navbar />
       </div>
 
-      {/* Added responsive padding */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative">
         <div
           className={`transition-all duration-300 ${
@@ -88,7 +99,6 @@ const Portfolio = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            {/* Responsive Typography */}
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
               Our Portfolio
             </h1>
@@ -98,30 +108,12 @@ const Portfolio = () => {
             </p>
           </motion.div>
 
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex rounded-full p-1 bg-gray-800">
-              {["all", "web", "mobile"].map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeFilter === filter
-                      ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
-                      : "text-gray-300 hover:text-white"
-                  }`}
-                >
-                  {filter.charAt(0).toUpperCase() + filter.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* The grid is already responsive, which is great! */}
+          {/* Grid of all projects */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <div
                 key={project.id}
-                className="relative overflow-hidden rounded-2xl bg-gray-800 shadow-xl cursor-pointer"
+                className="relative overflow-hidden rounded-2xl bg-gray-800 shadow-xl cursor-pointer group"
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
@@ -131,8 +123,12 @@ const Portfolio = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="text-gray-300 text-sm">{project.description}</p>
+                  <h3 className="text-xl font-bold text-center">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                    {project.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -149,10 +145,9 @@ const Portfolio = () => {
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
               className="fixed inset-0 flex items-center justify-center z-30 p-4 pointer-events-none"
             >
-              {filteredProjects
+              {projects
                 .filter((p) => p.id === hoveredProject)
                 .map((project) => (
-                  // Responsive Hovered Card
                   <motion.div
                     key={project.id}
                     className="relative overflow-hidden rounded-2xl bg-gray-800 shadow-2xl w-full max-w-lg"
@@ -168,15 +163,13 @@ const Portfolio = () => {
                         transition={{ duration: 0.4 }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <h3 className="text-2xl font-bold text-white mb-2">
+                        <h3 className="text-2xl font-bold text-white mb-2 text-center">
                           {project.title}
                         </h3>
-                        <p className="text-gray-300 mb-3">
+                        <p className="text-gray-300 mb-3 text-center">
                           {project.description}
                         </p>
-                        <button className="text-white bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
-                          View Project
-                        </button>
+                        
                       </div>
                       <div className="absolute top-3 right-3 bg-gray-900/80 text-white text-xs px-3 py-1 rounded-full">
                         {project.category}

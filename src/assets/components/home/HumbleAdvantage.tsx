@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -67,16 +66,20 @@ const HumbleAdvantage = () => {
           className="mt-15 flex flex-wrap justify-center gap-8 mb-10"
         >
           <HoverCard
-            title="Transparent Collaboration & Accountability"
-            description="Open communication, shared responsibility, and clarity at every step."
+            title="Specialists in Custom Applications"
+            description="Our team excels in building tailor-made applications that perfectly fit your business needs."
           />
           <HoverCard
-            title="Outcome-Driven Innovation"
-            description="We obsess over measurable impact—like boosting engagement by 40% or cutting costs by 25%—so you see ROI from day one, not just polished prototypes"
+            title="Skilled in Embedded Technology Integration"
+            description="We integrate the latest embedded technologies seamlessly into your applications for maximum efficiency."
           />
           <HoverCard
-            title="Integrated Design-to-Deployment Workflow"
-            description="A seamless pipeline from idea to execution, with no silos."
+            title="Full Cycle Project Support"
+            description="From ideation to deployment, we provide end-to-end support for your projects."
+          />
+          <HoverCard
+            title="Client-Centric & Transparent"
+            description="We prioritize clear communication and transparency, keeping you in the loop at every stage."
           />
         </div>
       </div>
