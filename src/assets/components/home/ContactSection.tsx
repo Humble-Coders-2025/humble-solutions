@@ -21,7 +21,7 @@ const ContactSection = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: leftRef.current,
-            start: "top 60%",
+            start: "top 70%",
             toggleActions: "play reverse play reverse",
           },
         }
@@ -38,7 +38,7 @@ const ContactSection = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: rightRef.current,
-            start: "top 60%",
+            start: "top 70%",
             toggleActions: "play reverse play reverse",
           },
         }
@@ -50,18 +50,20 @@ const ContactSection = () => {
     "w-full max-w-full bg-transparent border border-white placeholder-white outline-none py-2 px-3 rounded";
 
   return (
-    <section className="min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-6 py-4 overflow-x-hidden">
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <section className="min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-4 sm:px-6 lg:px-12 py-10 overflow-x-hidden">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
         <div ref={leftRef} className="text-center lg:text-left">
-          <h3 className="text-xl font-medium mb-2">Got a Project in Mind?</h3>
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h3 className="text-lg sm:text-xl font-medium mb-2">
+            Got a Project in Mind?
+          </h3>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Let’s Make It Happen Together!
           </h1>
           <img
             src={`${import.meta.env.BASE_URL}photos/paper-plane-girl.png`}
             alt="Girl on paper plane"
-            className="w-72 mx-auto lg:mx-0 mt-4"
+            className="max-w-xs sm:max-w-sm md:max-w-md w-full mx-auto lg:mx-0 mt-6"
           />
         </div>
 
@@ -71,10 +73,10 @@ const ContactSection = () => {
           action="https://formspree.io/f/mnqkgeav" // 🔹 Replace with your Formspree endpoint
           method="POST"
           onSubmit={() => setStatus("success")}
-          className="space-y-6 w-full max-w-lg mx-auto"
+          className="space-y-6 w-full max-w-lg mx-auto lg:mx-0"
         >
           <div>
-            <label className="block mb-1 font-lg">Full Name</label>
+            <label className="block mb-1 font-medium">Full Name</label>
             <input
               type="text"
               name="name"
@@ -84,7 +86,7 @@ const ContactSection = () => {
             />
           </div>
           <div>
-            <label className="block mb-1 font-lg">Email address</label>
+            <label className="block mb-1 font-medium">Email address</label>
             <input
               type="email"
               name="email"
@@ -94,7 +96,7 @@ const ContactSection = () => {
             />
           </div>
           <div>
-            <label className="block mb-1 font-lg">Phone Number</label>
+            <label className="block mb-1 font-medium">Phone Number</label>
             <input
               type="tel"
               name="phone"
@@ -103,10 +105,10 @@ const ContactSection = () => {
             />
           </div>
           <div>
-            <label className="block mb-1 font-lg">Your Message:</label>
+            <label className="block mb-1 font-medium">Your Message:</label>
             <textarea
               name="message"
-              className={`${inputClass} h-24 resize-none`}
+              className={`${inputClass} h-28 resize-none`}
               placeholder="Tell us about your project..."
               required
             ></textarea>
@@ -116,13 +118,13 @@ const ContactSection = () => {
             className="bg-white text-blue-600 px-6 py-2 rounded-full flex items-center gap-2 hover:bg-gray-100 transition duration-300"
           >
             Submit
-            <span className="text-lg justify-center">→</span>
+            <span className="text-lg">→</span>
           </button>
 
           {/* Success/Error Messages */}
           {status === "success" && (
             <p className="text-green-200 text-sm mt-2">
-               Thank you! Your message has been sent.
+              ✅ Thank you! Your message has been sent.
             </p>
           )}
           {status === "error" && (
