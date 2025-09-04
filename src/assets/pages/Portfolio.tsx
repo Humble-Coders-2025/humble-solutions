@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "AttendX",
     category: "web",
     description:
-      "A full-featured e-commerce platform with payment integration and inventory management.",
+      "AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1470&q=80",
   },

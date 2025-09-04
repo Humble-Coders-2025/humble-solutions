@@ -50,20 +50,18 @@ const ContactSection = () => {
     "w-full max-w-full bg-transparent border border-white placeholder-white outline-none py-2 px-3 rounded";
 
   return (
-    <section className="min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-4 sm:px-6 lg:px-12 py-10 overflow-x-hidden">
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-16 md:py-20 lg:py-24 flex items-center justify-center bg-gradient-to-br from-[#2057C5] to-[#9CBDFF] text-white px-4 sm:px-6 lg:px-12 overflow-x-hidden">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
         <div ref={leftRef} className="text-center lg:text-left">
-          <h3 className="text-lg sm:text-xl font-medium mb-2">
-            Got a Project in Mind?
-          </h3>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+          <h3 className="text-xl font-medium mb-2">Got a Project in Mind?</h3>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Let’s Make It Happen Together!
           </h1>
           <img
             src={`${import.meta.env.BASE_URL}photos/paper-plane-girl.png`}
             alt="Girl on paper plane"
-            className="max-w-xs sm:max-w-sm md:max-w-md w-full mx-auto lg:mx-0 mt-6"
+            className="w-64 md:w-72 mx-auto lg:mx-0 mt-4"
           />
         </div>
 
@@ -73,7 +71,7 @@ const ContactSection = () => {
           action="https://formspree.io/f/mnqkgeav" // 🔹 Replace with your Formspree endpoint
           method="POST"
           onSubmit={() => setStatus("success")}
-          className="space-y-6 w-full max-w-lg mx-auto lg:mx-0"
+          className="space-y-6 w-full max-w-lg mx-auto bg-white/10 backdrop-blur-sm p-6 rounded-xl"
         >
           <div>
             <label className="block mb-1 font-medium">Full Name</label>
@@ -108,7 +106,7 @@ const ContactSection = () => {
             <label className="block mb-1 font-medium">Your Message:</label>
             <textarea
               name="message"
-              className={`${inputClass} h-28 resize-none`}
+              className={`${inputClass} h-24 resize-none`}
               placeholder="Tell us about your project..."
               required
             ></textarea>

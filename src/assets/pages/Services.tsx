@@ -4,35 +4,40 @@ import Footer from '../components/Footer';
 
 const services = [
   {
-    title: 'Web Development',
-    description: 'Custom websites and web applications built with modern technologies for optimal performance and user experience.',
+    title: 'Mobile App Development ',
+    description: 'Native and cross-platform mobile applications for iOS and Android, built to deliver intuitive design, high performance, and engaging user experiences. ',
     icon: '💻',
   },
   {
-    title: 'Mobile Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android platforms.',
+    title: 'Web Development ',
+    description: 'Custom websites and scalable web applications designed with the latest technologies for performance, functionality, and seamless user experience. ',
     icon: '📱',
   },
   {
-    title: 'UI/UX Design',
-    description: 'Beautiful and intuitive user interfaces designed to enhance user experience and engagement.',
+    title: 'Embedded & IoT Solutions ',
+    description: 'Smart embedded systems and IoT-enabled applications tailored to connect devices, automate processes, and unlock intelligent business insights. ',
     icon: '🎨',
   },
   {
-    title: 'Cloud Solutions',
-    description: 'Scalable cloud infrastructure and services to power your applications.',
+    title: 'Security & Utility Tools ',
+    description: 'Robust security solutions and utility tools to safeguard data, optimize workflows, and improve overall digital efficiency. ',
     icon: '☁️',
   },
   {
-    title: 'E-commerce',
-    description: 'Complete e-commerce solutions to grow your online business.',
+    title: 'UI/UX Design',
+    description: 'Engaging and user-friendly designs crafted to enhance usability, boost engagement, and create memorable customer journeys. ',
     icon: '🛒',
   },
   {
-    title: 'SEO & Marketing',
-    description: 'Improve your online visibility and reach more customers with our SEO services.',
+    title: 'E-commerce Development ',
+    description: 'End-to-end e-commerce solutions to launch and scale your online store, from storefront design to secure payment integration. ',
     icon: '📈',
   },
+  {
+    title: 'Freelance & Agile Delivery ',
+    description: 'Flexible engagement models with agile methodologies, ensuring timely project delivery and tailored solutions for every business need. ',
+    icon: '📈',
+  }
 ];
 
 const Services = () => {
@@ -53,7 +58,7 @@ const Services = () => {
             Our Services
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We offer a comprehensive suite of digital solutions to help your business thrive in the digital landscape.
+            We provide innovative digital solutions to help businesses grow, adapt, and thrive in the modern tech-driven world. 
           </p>
         </motion.div>
 
