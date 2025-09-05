@@ -102,36 +102,35 @@ type PortfolioSectionProps = {
 
 const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
   const projects = [
-  {
-    title: "AttendX",
-    subtitle: "Smart Attendance Solution",
-    description:
-      "AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators. Custom solution for institutions.",
-    image: `${import.meta.env.BASE_URL}images/attendx.png`,
-  },
-  {
-    title: "MatriCare",
-    subtitle: "Pregnancy Healthcare App",
-    description:
-      "MatriCare is a custom pregnancy healthcare app designed to guide expecting mothers through every stage. It provides personalized health monitoring, medical report analysis, diet planning, and a supportive community. With reminders and 24/7 expert support, it ensures safe and stress-free maternity care. Available on iOS & Android.",
-    image: `${import.meta.env.BASE_URL}images/matricare.png`,
-  },
-  {
-    title: "Shape",
-    subtitle: "Cylinder Management App",
-    description:
-      "This custom solution helps gas distributors manage cylinders efficiently. It enables real-time tracking, inventory updates, and customer record management, along with automated notifications for due dates. Designed for ease of use, it streamlines workflows and enhances safety in cylinder distribution operations. Available on Android.",
-    image: `${import.meta.env.BASE_URL}images/shape.png`,
-  },
-  {
-    title: "Aromex",
-    subtitle: "Mobile Shop Management App",
-    description:
-      "Tailored for a mobile retail business, Aromex enables efficient product management, supplier tracking, sales analysis, and inventory control. With detailed statistics and streamlined workflows, it helps the client manage operations more effectively. Custom solution available on Windows, iOS, and Android.",
-    image: `${import.meta.env.BASE_URL}images/aromex.png`,
-  },
-];
-
+    {
+      title: "AttendX",
+      subtitle: "Smart Attendance Solution",
+      description:
+        "AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators. Custom solution for institutions.",
+      image: `${import.meta.env.BASE_URL}photos/attendx.jpg`,
+    },
+    {
+      title: "MatriCare",
+      subtitle: "Pregnancy Healthcare App",
+      description:
+        "MatriCare is a custom pregnancy healthcare app designed to guide expecting mothers through every stage. It provides personalized health monitoring, medical report analysis, diet planning, and a supportive community. With reminders and 24/7 expert support, it ensures safe and stress-free maternity care. Available on iOS & Android.",
+      image: `${import.meta.env.BASE_URL}photos/matricare.jpg`,
+    },
+    {
+      title: "Shape",
+      subtitle: "Cylinder Management App",
+      description:
+        "This custom solution helps gas distributors manage cylinders efficiently. It enables real-time tracking, inventory updates, and customer record management, along with automated notifications for due dates. Designed for ease of use, it streamlines workflows and enhances safety in cylinder distribution operations. Available on Android.",
+      image: `${import.meta.env.BASE_URL}photos/shape.jpg`,
+    },
+    {
+      title: "Aromex",
+      subtitle: "Mobile Shop Management App",
+      description:
+        "Tailored for a mobile retail business, Aromex enables efficient product management, supplier tracking, sales analysis, and inventory control. With detailed statistics and streamlined workflows, it helps the client manage operations more effectively. Custom solution available on Windows, iOS, and Android.",
+      image: `${import.meta.env.BASE_URL}photos/aromex.jpg`,
+    },
+  ];
 
   return (
     <section className="px-0 py-10 bg-[#0f172a] text-white w-full min-h-screen flex flex-col">
@@ -153,14 +152,14 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
         className="flex-1 w-full overflow-x-auto overflow-y-hidden custom-scrollbar"
         ref={portfolioScrollRef}
       >
-        <div className="flex gap-6 sm:gap-8 px-6 py-6 min-w-max items-center">
+        <div className="flex gap-6 sm:gap-8 px-6 py-6 min-w-max items-stretch">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#1e293b] rounded-3xl p-4 sm:p-8 md:p-12 w-[90vw] sm:w-[400px] md:w-[600px] lg:w-[800px] xl:w-[900px] shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-10 h-[70vh] max-h-[500px]"
+              className="flex-shrink-0 bg-[#1e293b] rounded-3xl p-6 sm:p-8 md:p-10 w-[90vw] sm:w-[400px] md:w-[600px] lg:w-[750px] xl:w-[900px] shadow-2xl flex flex-col md:flex-row items-center md:items-stretch gap-6 md:gap-10 h-auto"
             >
               {/* Text Section */}
-              <div className="md:w-2/3 w-full">
+              <div className="flex-1 flex flex-col justify-center">
                 <h3
                   className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3"
                   style={{
@@ -179,11 +178,11 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
               </div>
 
               {/* Image Section */}
-              <div className="md:w-1/3 w-full max-w-[300px]">
+              <div className="md:w-1/3 w-full flex justify-center">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="rounded-2xl object-cover w-full h-auto max-h-[220px]"
+                  className="rounded-2xl object-cover w-full max-w-[320px] h-[200px] sm:h-[250px] md:h-[280px] lg:h-[320px]"
                 />
               </div>
             </div>
@@ -193,6 +192,7 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
     </section>
   );
 };
+
 
 // MAIN COMPONENT
 type HomeSectionsProps = {
