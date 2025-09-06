@@ -134,7 +134,7 @@ const AboutUs = () => {
       </div>
 
       {/* Stats */}
-      <div className="bg-gray-900 text-white py-16">
+      {/* <div className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
@@ -152,10 +152,10 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Our Team */}
-      <div className="py-16 bg-white">
+      {/* <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Meet Our Team</h2>
@@ -203,7 +203,7 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* CTA */}
       {/* <div className="bg-gradient-to-r from-blue-600 to-cyan-500">
