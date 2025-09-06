@@ -2,59 +2,59 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/navbar';
 import Footer from '../components/Footer';
 
-const teamMembers = [
-  {
-    name: 'Alex Johnson',
-    role: 'CEO & Founder',
-    bio: 'Visionary leader with 15+ years of experience in digital transformation and business strategy.',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Sarah Williams',
-    role: 'Lead Designer',
-    bio: 'Creative mind behind our stunning user interfaces, with a passion for intuitive user experiences.',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      dribbble: '#',
-    },
-  },
-  {
-    name: 'Michael Chen',
-    role: 'Senior Developer',
-    bio: 'Full-stack developer specializing in building scalable and performant web applications.',
-    image: 'https://randomuser.me/api/portraits/men/75.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Emma Davis',
-    role: 'Marketing Director',
-    bio: 'Digital marketing expert with a proven track record of driving growth through innovative strategies.',
-    image: 'https://randomuser.me/api/portraits/women/68.jpg',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      instagram: '#',
-    },
-  },
-];
+// const teamMembers = [
+//   {
+//     name: 'Alex Johnson',
+//     role: 'CEO & Founder',
+//     bio: 'Visionary leader with 15+ years of experience in digital transformation and business strategy.',
+//     image: 'https://randomuser.me/api/portraits/men/32.jpg',
+//     social: {
+//       twitter: '#',
+//       linkedin: '#',
+//       github: '#',
+//     },
+//   },
+//   {
+//     name: 'Sarah Williams',
+//     role: 'Lead Designer',
+//     bio: 'Creative mind behind our stunning user interfaces, with a passion for intuitive user experiences.',
+//     image: 'https://randomuser.me/api/portraits/women/44.jpg',
+//     social: {
+//       twitter: '#',
+//       linkedin: '#',
+//       dribbble: '#',
+//     },
+//   },
+//   {
+//     name: 'Michael Chen',
+//     role: 'Senior Developer',
+//     bio: 'Full-stack developer specializing in building scalable and performant web applications.',
+//     image: 'https://randomuser.me/api/portraits/men/75.jpg',
+//     social: {
+//       twitter: '#',
+//       linkedin: '#',
+//       github: '#',
+//     },
+//   },
+//   {
+//     name: 'Emma Davis',
+//     role: 'Marketing Director',
+//     bio: 'Digital marketing expert with a proven track record of driving growth through innovative strategies.',
+//     image: 'https://randomuser.me/api/portraits/women/68.jpg',
+//     social: {
+//       twitter: '#',
+//       linkedin: '#',
+//       instagram: '#',
+//     },
+//   },
+// ];
 
-const stats = [
-  { label: 'Projects Completed', value: '250+' },
-  { label: 'Happy Clients', value: '180+' },
-  { label: 'Team Members', value: '40+' },
-  { label: 'Years Experience', value: '8' },
-];
+// const stats = [
+//   { label: 'Projects Completed', value: '250+' },
+//   { label: 'Happy Clients', value: '180+' },
+//   { label: 'Team Members', value: '40+' },
+//   { label: 'Years Experience', value: '8' },
+// ];
 
 const AboutUs = () => {
   return (
