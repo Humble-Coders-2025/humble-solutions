@@ -35,12 +35,12 @@ const Navbar = () => {
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
           </Link>
         </li>
-        <li className="relative group">
+        {/* <li className="relative group">
           <Link to="/humble-solutions/blogs" className="hover:text-blue-400 transition">
             Blogs
             <span className="block h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left mt-1"></span>
           </Link>
-        </li>
+        </li> */}
         <li className="relative group">
           <Link to="/humble-solutions/about" className="hover:text-blue-400 transition">
             About Us
@@ -72,7 +72,7 @@ const Navbar = () => {
             <li><Link to="/humble-solutions" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Home</Link></li>
             <li><Link to="/humble-solutions/services" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Services</Link></li>
             <li><Link to="/humble-solutions/portfolio" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Portfolio</Link></li>
-            <li><Link to="/humble-solutions/blogs" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
+            {/* <li><Link to="/humble-solutions/blogs" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Blogs</Link></li> */}
             <li><Link to="/humble-solutions/about" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>About Us</Link></li>
           </ul>
           <button className="mb-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-full shadow transition">

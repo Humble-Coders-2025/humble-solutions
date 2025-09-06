@@ -14,13 +14,14 @@ export const HeroSection = () => {
     >
       {/* Left: Text */}
       <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-6 lg:p-5">
-        <h1 className=" font-avenir-demibold text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
+        <h1 className=" font-avenir-demibold text-xl sm:text-4xl md:text-5xl font-bold text-gray-200 leading-tight">
           Transform Ideas into Intuitive <br />
           <span className="text-blue-400">Digital Experiences.</span>
         </h1>
-        <p className=" font-avenir-regular text-gray-400 text-base sm:text-lg max-w-xl">
-          We craft sleek mobile apps, responsive websites, and user-centered
-          UI/UX designs...
+        <p className=" font-avenir-regular text-gray-400 text-base sm:text-xl max-w-xl">
+        We craft sleek 
+        <span className="text-blue-400 text-xl sm:text-lg"> mobile apps, responsive websites, and user-centered
+          UI/UX designs...</span>
         </p>
         <div className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start">
           <button className="font-avenir-regular bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow transition text-base">
@@ -156,33 +157,38 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#1e293b] rounded-3xl p-6 sm:p-8 md:p-10 w-[90vw] sm:w-[400px] md:w-[600px] lg:w-[750px] xl:w-[900px] shadow-2xl flex flex-col md:flex-row items-center md:items-stretch gap-6 md:gap-10 h-auto"
+              className="flex-shrink-0 bg-[#1e293b] rounded-3xl p-6 sm:p-8 md:p-10 
+                         w-[90vw] sm:w-[400px] md:w-[600px] lg:w-[750px] xl:w-[900px] 
+                         shadow-2xl flex flex-col md:flex-row gap-6 md:gap-10 
+                         min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px]"
             >
               {/* Text Section */}
-              <div className="flex-1 flex flex-col justify-center">
-                <h3
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3"
-                  style={{
-                    fontFamily: "IBM Plex Mono, monospace",
-                    fontWeight: 600,
-                  }}
-                >
-                  {project.title}
-                </h3>
-                <h4 className="font-avenir-regular text-gray-400 text-lg sm:text-xl mb-4">
-                  {project.subtitle}
-                </h4>
-                <p className="font-avenir-regular text-gray-300 text-base sm:text-lg leading-relaxed">
-                  {project.description}
-                </p>
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <h3
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3"
+                    style={{
+                      fontFamily: "IBM Plex Mono, monospace",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  <h4 className="font-avenir-regular text-gray-400 text-lg sm:text-xl mb-4">
+                    {project.subtitle}
+                  </h4>
+                  <p className="font-avenir-regular text-gray-300 text-base sm:text-lg leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
               </div>
 
               {/* Image Section */}
-              <div className="md:w-1/3 w-full flex justify-center">
+              <div className="md:w-1/3 w-full flex justify-center items-center">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="rounded-2xl object-cover w-full max-w-[320px] h-[200px] sm:h-[250px] md:h-[280px] lg:h-[320px]"
+                  className="rounded-2xl object-cover w-full max-w-[360px] h-[240px] sm:h-[280px] md:h-[320px] lg:h-[450px]"
                 />
               </div>
             </div>
@@ -192,6 +198,7 @@ const PortfolioSection = ({ portfolioScrollRef }: PortfolioSectionProps) => {
     </section>
   );
 };
+
 
 
 // MAIN COMPONENT

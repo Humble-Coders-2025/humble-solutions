@@ -78,14 +78,14 @@ const AboutUs = () => {
             >
               About Humble Solutions
             </motion.h1>
-            <motion.p 
+            {/* <motion.p 
               className="mt-6 text-xl max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
             >
               Empowering businesses with innovative digital solutions since 2015. We believe in the power of technology to transform ideas into reality.
-            </motion.p>
+            </motion.p> */}
           </div>
         </div>
       </div>
@@ -122,14 +122,12 @@ const AboutUs = () => {
                 Our Story
               </h2>
               <p className="mt-4 text-lg text-gray-500">
-                Founded in 2015, Humble Solutions began as a small team of passionate developers and designers with a shared vision: to create meaningful digital experiences that make a difference.
+                At Humble Solutions, we craft technology that adapts to your business. Every organization is unique, and so are its challenges. That’s why we design and deliver tailor-made solutions—whether web-based, app-based, or fully integrated systems—built to match the specific needs of our clients. 
               </p>
               <p className="mt-4 text-lg text-gray-500">
-                What started as a modest operation has grown into a full-service digital agency serving clients across various industries. Our commitment to excellence, innovation, and client satisfaction has been the driving force behind our success.
+                We believe innovation works best when it’s simple, purposeful, and built with humility. Our focus is on creating solutions that don’t just solve problems, but help businesses grow smarter and faster. 
               </p>
-              <p className="mt-4 text-lg text-gray-500">
-                Today, we continue to push boundaries and challenge the status quo, helping businesses of all sizes navigate the digital landscape with confidence.
-              </p>
+              
             </motion.div>
           </div>
         </div>
@@ -208,7 +206,7 @@ const AboutUs = () => {
       </div>
 
       {/* CTA */}
-      <div className="bg-gradient-to-r from-blue-600 to-cyan-500">
+      {/* <div className="bg-gradient-to-r from-blue-600 to-cyan-500">
         <div className="max-w-4xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             <span className="block">Ready to start your next project?</span>
@@ -229,7 +227,7 @@ const AboutUs = () => {
             </a>
           </motion.div>
         </div>
-      </div>
+      </div> */}
       
       <Footer />
     </div>
