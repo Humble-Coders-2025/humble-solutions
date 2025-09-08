@@ -8,13 +8,13 @@ import AboutUs from './assets/pages/AboutUs';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Routes>
-        <Route path="/humble-solutions/" element={<Home />} />
-        <Route path="/humble-solutions/services" element={<Services />} />
-        <Route path="/humble-solutions/portfolio" element={<Portfolio />} />
-        <Route path="/humble-solutions/blogs" element={<Blogs />} />
-        <Route path="/humble-solutions/about" element={<AboutUs />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
     </Router>
   );
