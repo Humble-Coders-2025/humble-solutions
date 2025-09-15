@@ -10,8 +10,7 @@ const projects = [
     category: "web",
     description:
       "Smart Attendance Solution — AttendX is an automated attendance system designed for large institutions. With one-click attendance, mobile-based verification, and anti-proxy measures, it ensures 100% accuracy. The platform reduces workload, saves time, and provides real-time dashboards for teachers and administrators. Custom solution for institutions.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1470&q=80",
+    image: "/photos/attendX_portfolio.jpg",
   },
   {
     id: 2,
@@ -20,7 +19,7 @@ const projects = [
     description:
       "Pregnancy Healthcare App — MatriCare is a custom pregnancy healthcare app designed to guide expecting mothers through every stage. It provides personalized health monitoring, medical report analysis, diet planning, and a supportive community. With reminders and 24/7 expert support, it ensures safe and stress-free maternity care. Available on iOS & Android.",
     image:
-      "https://images.unsplash.com/photo-1588776814546-ec9c0d292fc1?auto=format&fit=crop&w=1470&q=80",
+      "/photos/matri_portfolio.jpg",
   },
   {
     id: 3,
@@ -74,7 +73,7 @@ const projects = [
     description:
       "A role-based platform for community health camps. From participant registration and vitals recording to doctor consultations and pharmacy dispensing, each desk has its own portal. Admins manage sponsors, camps, and reports, ensuring transparency, efficiency, and accurate digital health records.",
     image:
-      "https://images.unsplash.com/photo-1581091012184-5c1b4b9b2e3c?auto=format&fit=crop&w=1470&q=80",
+      "/photos/health_portfolio.jpg",
   },
 ];
 
@@ -150,29 +149,25 @@ const Portfolio = () => {
                 .map((project) => (
                   <motion.div
                     key={project.id}
-                    className="relative overflow-hidden rounded-2xl bg-gray-800 shadow-2xl w-full max-w-lg"
-                    animate={{ scale: 1.1 }}
+                    className="relative overflow-hidden rounded-2xl shadow-2xl w-full max-w-lg"
+                    
+                    animate={{ scale: 1.1, backgroundColor: "#9333ea" }} // purple-600
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
                   >
                     <div className="relative h-64 sm:h-80 overflow-hidden">
-                      <motion.img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                        animate={{ scale: 1.1 }}
-                        transition={{ duration: 0.4 }}
+                      {/* Replace the image with a background */}
+                      <motion.div
+                        className="w-full h-full"
+                        initial={{ backgroundColor: "#1f2937" }} // gray-800
+                        animate={{ backgroundColor: "#9333ea" }} // purple-600
+                        transition={{ duration: 0.5 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+
+                      <div className="absolute inset-0 flex flex-col justify-end p-6">
                         <h3 className="text-2xl font-bold text-white mb-2 text-center">
                           {project.title}
                         </h3>
-                        <p className="text-gray-300 mb-3 text-center">
-                          {project.description}
-                        </p>
-                        
-                      </div>
-                      <div className="absolute top-3 right-3 bg-gray-900/80 text-white text-xs px-3 py-1 rounded-full">
-                        {project.category}
+                        <p className="text-gray-300 mb-3 text-center">{project.description}</p>
                       </div>
                     </div>
                   </motion.div>
